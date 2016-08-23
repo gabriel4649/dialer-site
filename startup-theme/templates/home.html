@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="welcome" class="hidden-sm hidden-xs">
+    <video id="video"
+           autoplay
+           loop>
+        <source src="https://s3.amazonaws.com/curioso-images/assets/tokyo.mp4"
+                type="video/mp4">
+        <source src="https://s3.amazonaws.com/curioso-images/assets/tokyo.ogg"
+                type="video/ogg">
+        <source src="https://s3.amazonaws.com/curioso-images/assets/tokyo.webm"
+                type="video/webm">
+    </video>
+    <div class="text-center main-post-content">
+        <img class="logo" src="https://s3.amazonaws.com/curioso-images/assets/logo-bg.png">
+        <h2>Online Japanese</h2>
+        <h1>CLASSROOM</h1>
+        <span class="subtitle">{{ welcome_msg }}</span>
+    </div>
+    <div class="main-post-footer text-center">
+        {% include 'special/show-me-class-button.html' %}
+        {% include 'trial-class-button.html' %}
+    </div>
+    {% include 'signup-modal.html' %}
+</div>
+<div class="visible-sm visible-xs">
+    <div class="text-center main-post-content sm-main-post-content">
+        <h3>Online Japanese Classroom</h3>
+        <h2>{{ welcome_msg }}</h2>
+        <div id="mobile-welcome-button">
+            {% include 'show-me-class-button.html' %}
+            {% include 'trial-class-button.html' %}
+        </div>
+        <hr>
+    </div>
+</div>
+<div id="after-welcome" class="container">
+    <div class="row howitworks">
+        <div class="col-sm-4">
+            <div>
+	        <img src="https://s3.amazonaws.com/curioso-images/assets/hangout-s2.png"
+                     alt="Our classroom"
+                     class="img-circle img-thumbnail">
+	        <h2>Train in Class</h2>
+                <p>Our virtual classroom is structured, fun, social and focused on talking and listening. </p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div>
+	        <img src="https://s3.amazonaws.com/curioso-images/assets/study-hard.jpg"
+                     alt="Samurai sword and japanese language books"
+                     class="img-circle img-thumbnail">
+	        <h2>Use Samurai Will</h2>
+	        <p>
+                    Our course is for the dedicated, passionate and brave of
+                    heart. Take out your katana and study hard!
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div>
+	        <img src="https://s3.amazonaws.com/curioso-images/assets/richard-girls.jpg"
+                     alt="Puerto Rican in Japan with two girls in cosplay."
+                     class="img-circle img-thumbnail">
+	        <h2>Apply your skills!</h2>
+	        <p>Get practical language skills and apply them. <a></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="row top-buffer">
+        <div class="col-md-12">
+            <div class="embed-responsive embed-responsive-16by9"
+                 id="class">
+                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/z93qVFlPLng"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="well top-buffer">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>100% Learning Guaranteed</h1>
+                <p class="lead">
+                    If you are not completely satisfied with Koipun,
+                    we will return your money! <a href="/learnmore/philosophy">Tell me more!</a>
+                </p>
+            </div>
+            <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+            </div>
+        </div>
+    </div>
+    <div class="row text-center">
+        <a href="/tour/classroom">
+            <button type="button" class="btn btn-default btn-lg">
+                Learn More
+            </button>
+        </a>
+        {% include 'trial-class-button.html' %}
+    </div>
+</div>
+{% endblock content %}
